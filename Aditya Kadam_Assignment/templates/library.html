@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}My Library {% endblock %}
+{% block content %}
+<html>
+    <head>
+        <title>{{t}}</title>
+        <style>       
+ 
+                img {
+        width: 290px ;
+        height: 150px;
+      }    
+        </style>   
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >
+    </head>
+    <body>
+        <h1>{{ h }}</h1>
+        <ul>
+            <li><a href="/library" class="{{ a1 }}">ALL Movie</a></li> 
+        </ul>
+        <hr>
+        {% if movies[0] %}   
+
+        <div span="right">    
+            <form action="/search"   method="GET" >    
+                <table class="none" id="close">    
+                <tr>    
+                <td></td><td></td>    
+                <td><big><b>Search Movie:</b></big></td>    
+                <td><select name="refer" required>    
+                    <option value="name">Movie Name</option>      
+                </select></td>    
+                <td><input type="text" name="key" placeholder="Search Movie" size="15" /></td>    
+                <td><button type="submit">Search Movie</button></td>    
+                </tr>    
+                </table>    
+            </form>    
+            </div>   
+
+            <b><big>List Of Movies :</big></b>    
+            <table>    
+                <tr id="row">    
+                       
+                    <th class="name">Movie Name</th>    
+                    <th class="summary">Summary</th>  
+                    <th class="img">Image URL</th>    
+                       
+                <th class="func1">Remove</th>    
+                <th class="func2">Modify</th>    
+                </tr>    
+            {% for movie in movies %}    
+                <tr class="datas">    
+                    
+                    <td class="name">{{ movie["name"] }}</td>    
+                    <td class="summary">{{ movie["summary"] }}</td>    
+                    <td class="img"> <img src={{ movie["img"] }}></td>     
+                    <!-- <td class="img">{{ movie["img"] }}</td>      -->
+                    <td class="func1"><a href="./remove?_id={{ movie['_id'] }}"><button type="submit">DELETE Movie</button></a></td>    
+                    <td class="func1"><a href="./update?_id={{ movie['_id'] }}"><button type="submit">EDIT Movie</button></a></td>    
+                </tr>    
+            {% endfor %}    
+            </table>    
+            {% else %}    
+            <h4>No Movies in the List !!</h4>    
+            {% endif %}    
+            
+            <hr/>    
+    <form action="/action" method="POST">    
+    <table class="none">    
+        <tr>    
+            <td><b><big><label>Add a Movie : </label></big></b></td>    
+        </tr>    
+        <tr>    
+        <td><input type="text" name="name" placeholder="Movie name" required></td>    
+        <td><textarea name="summary" rows="1" cols="30" placeholder="Enter Movie Summary here..." required></textarea></td>    
+        <td><input type="text" name="img" placeholder="Image URL" required/></td>       
+        <td><button type="submit"> Add Movie </button></td>    
+        </tr>    
+    </form>    
+    </table>    
+    <script>    
+        
+    </script>    
+
+
+    </body>
+    </html>
+
+    {% endblock %}
