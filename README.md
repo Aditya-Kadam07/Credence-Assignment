@@ -8,7 +8,7 @@ The main code file is app.py
  
  Output is Displayed in JSON Format.
  
- Screenshot of Valiation, Error log file, and Output in JSON Format is uploaded.
+ Screenshot of Validation, Error log file, and Output in JSON Format is uploaded.
  
  
 
