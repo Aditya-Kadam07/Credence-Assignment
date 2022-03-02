@@ -6,7 +6,7 @@ The main code file is app.py
  
  Validation while performing CRUD operations is Completed.
  
- Output is Displayed in JSON Format as Required.
+ Output is Displayed in JSON Format.
  
  Screenshot of Valiation, Error log file, and Output in JSON Format is uploaded.
  
