@@ -95,7 +95,7 @@ def action2():
        return jsonify({"response":"Movie not found"})
 
 
-#Cannot remove port number, there's an issue on my machine where the port is already in use and it keeps restarting so on my
-# machine i have to hard code port number, It should work fine on other machines without mentioning port number
+#Cannot remove port number, there's an issue on my machine where the default port is already in use and it keeps restarting evn after killing it, so on my
+# machine i have to hard code the port number, It should work fine on other machines without mentioning port number
 if __name__ == "__main__":
   app.run(port=8084)
