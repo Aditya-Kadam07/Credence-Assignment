@@ -1,3 +1,17 @@
+# Update 
+
+The main code file is app.py 
+ 
+ Error Logging added
+ 
+ Validation while performing CRUD operations is Completed.
+ 
+ Output is Displayed in JSON Format as Required.
+ 
+ Screenshot of Valiation, Error log file, and Output in JSON Format is uploaded.
+ 
+ 
+
 # Credence-Assignment
 Credence Analytics Round 1 Assignment/
 
